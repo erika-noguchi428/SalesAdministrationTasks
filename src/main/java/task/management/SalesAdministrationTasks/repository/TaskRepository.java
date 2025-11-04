@@ -105,9 +105,7 @@ public interface TaskRepository {
    *
    * @param task 　タスク
    */
-  //@Update("UPDATE tasks SET operation = #{operation}, status = #{status}, assigned_to = #{assignedTo},"
-  //   + " created_at = #{createdAt}, deadline = #{deadline}, description = #{description}, is_deleted = #{isDeleted}"
-  //   + " WHERE task_id = #{taskId}")
+
   void updateTasks(Tasks task);
 
   /**
@@ -115,16 +113,14 @@ public interface TaskRepository {
    *
    * @param taskDetail 　受講生詳細情報
    */
-  // @Update("UPDATE task_details SET task_id = #{taskId}, task_name = #{taskName}, "
-  //    + "company_name = #{companyName}, required_info = #{requiredInfo}, updated_at = #{updatedAt} "
-  //   + "WHERE task_detail_id = #{taskDetailId} ")
+
   void updateTaskDetails(TaskDetail taskDetail);
 
 
-/**
- * A部署依頼事項の更新を行います。
- */
-void updateARequest(ARequest aRequest);
+  /**
+   * A部署依頼事項の更新を行います。
+   */
+  void updateARequest(ARequest aRequest);
 
   /**
    * B部署依頼事項の更新を行います。

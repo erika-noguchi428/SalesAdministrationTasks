@@ -39,11 +39,11 @@
 
   <!-- A部署へ依頼事項の検索-->
   <select id="searchARequestList"
-     resultType="task.management.SalesAdministrationTasks.data.ARequest">
-     SELECT * FROM A_request WHERE task_detail_id = #{taskDetailId}
-   </select>
+    resultType="task.management.SalesAdministrationTasks.data.ARequest">
+    SELECT * FROM A_request WHERE task_detail_id = #{taskDetailId}
+  </select>
 
-   <!-- B部署へ依頼事項の検索(全件)-->
+  <!-- B部署へ依頼事項の検索(全件)-->
   <select id="searchBRequest"
     resultType="task.management.SalesAdministrationTasks.data.BRequest">
     SELECT * FROM B_request
@@ -105,7 +105,8 @@
   <!-- A部署への依頼事項の更新 -->
   <update id="updateARequest"
     parameterType="task.management.SalesAdministrationTasks.data.ARequest">
-    UPDATE a_request SET a_request_id = #{aRequestId}, item = #{item}, request_status = #{requestStatus},
+    UPDATE a_request SET a_request_id = #{aRequestId}, item = #{item}, request_status =
+    #{requestStatus},
     task_detail_id = #{taskDetailId}
     WHERE task_detail_id = #{taskDetailId}
   </update>
@@ -113,7 +114,8 @@
   <!-- B部署への依頼事項の更新 -->
   <update id="updateBRequest"
     parameterType="task.management.SalesAdministrationTasks.data.BRequest">
-    UPDATE b_request SET b_request_id = #{bRequestId}, item =#{item}, request_status = #{requestStatus},
+    UPDATE b_request SET b_request_id = #{bRequestId}, item =#{item}, request_status =
+    #{requestStatus},
     task_detail_id = #{taskDetailId}
     WHERE task_detail_id = #{taskDetailId}
   </update>
