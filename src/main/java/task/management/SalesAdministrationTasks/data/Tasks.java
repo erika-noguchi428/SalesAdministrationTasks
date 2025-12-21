@@ -1,6 +1,7 @@
 package task.management.SalesAdministrationTasks.data;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @Setter
 public class Tasks {
 
+  @Max(10000)
   private Integer taskId;
 
   @NotBlank
