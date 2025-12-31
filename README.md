@@ -20,8 +20,8 @@ Arequest (A部署への依頼事項)の登録、更新、削除
 Brequest (B部署への依頼事項)の登録、更新、削除
 
 ## 動作確認
-Taskの全権検索
-
+Taskの全件検索
+https://github.com/user-attachments/assets/111bbc22-6f4d-4d24-b016-16bbf2faa947
 Taskの条件検索
 
 Taskの登録機能
