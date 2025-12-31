@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="task.management.SalesAdministrationTasks.repository.TaskRepository">
+
+  <!-- タスク情報の全件検索 -->
+  <select id="search" resultType="task.management.SalesAdministrationTasks.data.Tasks">
+    SELECT * FROM tasks WHERE is_deleted = false
+  </select>
+
+  <!-- タスク情報の検索 -->
+  <select id="searchTasks" resultType="task.management.SalesAdministrationTasks.data.Tasks">
+    SELECT * FROM tasks WHERE task_id = #{task_id}
+  </select>
+
+  <!-- タスクの詳細情報(全件)-->
+  <select id="searchTaskDetailList"
+    resultType="task.management.SalesAdministrationTasks.data.TaskDetail">
+    SELECT * FROM task_details
+  </select>
+
+  <!-- タスクの詳細情報の検索 -->
+  <select id="searchTaskDetail"
+    resultType="task.management.SalesAdministrationTasks.data.TaskDetail">
+    SELECT * FROM task_details WHERE task_id = #{taskId}
+  </select>
+
+  <!-- 依頼事項の検索（全件） -->
+  <select id="searchTaskRequestGroup"
+    resultType="task.management.SalesAdministrationTasks.domain.TaskRequestGroup">
+    SELECT * FROM task_details
+  </select>
+
+  <!-- A部署へ依頼事項の検索(全件)-->
+  <select id="searchARequest"
+    resultType="task.management.SalesAdministrationTasks.data.ARequest">
+    SELECT * FROM A_request
+  </select>
+
+  <!-- A部署へ依頼事項の検索-->
+  <select id="searchARequestList"
+    resultType="task.management.SalesAdministrationTasks.data.ARequest">
+    SELECT * FROM A_request WHERE task_detail_id = #{taskDetailId}
+  </select>
+
+  <!-- B部署へ依頼事項の検索(全件)-->
+  <select id="searchBRequest"
+    resultType="task.management.SalesAdministrationTasks.data.BRequest">
+    SELECT * FROM B_request
+  </select>
+
+  <!-- B部署へ依頼事項の検索-->
+  <select id="searchBRequestList"
+    resultType="task.management.SalesAdministrationTasks.data.BRequest">
+    SELECT * FROM B_request WHERE task_detail_id = #{taskDetailId}
+  </select>
+
+  <!-- タスク情報の登録 -->
+  <insert id="registerTasks" parameterType="task.management.SalesAdministrationTasks.data.Tasks"
+    useGeneratedKeys="true" keyProperty="taskId">
+    INSERT INTO tasks (task_name, status, salesman_name, clerk_name, deadline, comment)
+    VALUES(#{taskName}, #{status}, #{salesmanName}, #{clerkName}, #{deadline}, #{comment})
+  </insert>
+
+  <!-- タスク詳細情報を登録 -->
+  <insert id="registerTaskDetail"
+    parameterType="task.management.SalesAdministrationTasks.data.TaskDetail"
+    useGeneratedKeys="true" keyProperty="taskDetailId">
+    INSERT INTO task_details(task_id, operation, company_name, requirements)
+    VALUES(#{taskId}, #{operation}, #{companyName}, #{requirements})
+  </insert>
+
+  <!-- A部署への依頼事項の登録 -->
+  <insert id="registerARequest"
+    parameterType="task.management.SalesAdministrationTasks.data.ARequest"
+    useGeneratedKeys="true" keyProperty="aRequestId">
+    INSERT INTO a_request ( item, request_status, task_detail_id )
+    VALUES ( #{item}, #{requestStatus}, #{taskDetailId})
+  </insert>
+
+  <!-- B部署への依頼事項の登録 -->
+  <insert id="registerBRequest"
+    parameterType="task.management.SalesAdministrationTasks.data.BRequest"
+    useGeneratedKeys="true" keyProperty="bRequestId">
+    INSERT INTO b_request ( item, request_status, task_detail_id )
+    VALUES ( #{item}, #{requestStatus}, #{taskDetailId})
+  </insert>
+
+  <!-- タスク情報の更新 -->
+  <update id="updateTasks" parameterType="task.management.SalesAdministrationTasks.data.Tasks">
+    UPDATE tasks SET task_name = #{taskName}, status = #{status}, salesman_name = #{salesmanName},
+    clerk_name = #{clerkName},
+    deadline = #{deadline}, comment = #{comment}, is_deleted = #{isDeleted} WHERE task_id =
+    #{taskId}
+  </update>
+
+  <!-- タスク詳細情報の更新 -->
+  <update id="updateTaskDetails"
+    parameterType="task.management.SalesAdministrationTasks.data.TaskDetail">
+    UPDATE task_details SET task_id = #{taskId}, operation = #{operation},
+    company_name = #{companyName}, requirements = #{requirements}
+    WHERE task_detail_id = #{taskDetailId}
+  </update>
+
+  <!-- A部署への依頼事項の更新 -->
+  <update id="updateARequest"
+    parameterType="task.management.SalesAdministrationTasks.data.ARequest">
+    UPDATE a_request SET a_request_id = #{aRequestId}, item = #{item}, request_status =
+    #{requestStatus},
+    task_detail_id = #{taskDetailId}
+    WHERE task_detail_id = #{taskDetailId}
+  </update>
+
+  <!-- B部署への依頼事項の更新 -->
+  <update id="updateBRequest"
+    parameterType="task.management.SalesAdministrationTasks.data.BRequest">
+    UPDATE b_request SET b_request_id = #{bRequestId}, item =#{item}, request_status =
+    #{requestStatus},
+    task_detail_id = #{taskDetailId}
+    WHERE task_detail_id = #{taskDetailId}
+  </update>
+
+</mapper>
