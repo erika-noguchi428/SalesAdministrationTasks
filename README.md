@@ -30,14 +30,31 @@
 # 6. 動作確認
 - Taskの全件検索<br>
 https://github.com/user-attachments/assets/111bbc22-6f4d-4d24-b016-16bbf2faa947<br>
+
+![プレゼンテーション1](https://github.com/user-attachments/assets/edf9b53b-d24b-4f79-91d6-279c551505df)
+
+
 - Taskの条件検索<br>
 https://github.com/user-attachments/assets/2c2e6bb6-ae29-4aec-8b17-6e65337a0fd6<br>
+
+![プレゼンテーション2](https://github.com/user-attachments/assets/cc4a5cb7-60b5-475c-b87a-e01b04e02c1f)
+
 - Taskの登録機能<br>
 https://github.com/user-attachments/assets/8eb84060-0d75-4cd1-9915-15da9c00c1dc<br>
+
+![プレゼンテーション3](https://github.com/user-attachments/assets/a88c1c49-8389-47fb-a637-45e50e5aafd2)
+
 - Taskの更新機能<br>
 https://github.com/user-attachments/assets/483e7bc1-a676-4097-aaa4-e39bd877885b<br>
+
+![プレゼンテーション4正しい](https://github.com/user-attachments/assets/1cc5f722-5057-4e98-bf44-25c74d412a02)
+
+
 - Taskの論理削除機能<br>
 https://github.com/user-attachments/assets/69b3b2a4-1863-4732-b304-ac025e20d4f1<br>
+
+![プレゼンテーション5](https://github.com/user-attachments/assets/5eabe9fe-f4c6-4821-a693-c725de7ce381)
+
 
 # 7. 使用機能
 java　21.0.8<br>
