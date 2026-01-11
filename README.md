@@ -19,6 +19,14 @@
 - Arequest (A部署への依頼事項)の登録、更新、削除<br>
 - Brequest (B部署への依頼事項)の登録、更新、削除<br>
 
+| 機能 | HTTP Method | Endpoint | 説明 |
+|------|-------------|----------|------|
+| Task一覧取得 | GET | [/api/tasks](http://localhost:8080/tasksList) | Taskと紐づくTaskDetail・ Arequest・ Brequestを全件取得 |
+| Task Id検索 | GET | [/api/tasks](http://localhost:8080/task/21) | Task Id（このEndpointの場合は21）に紐づくTaskDetail・ Arequest・ Brequestを登録 |
+| Task登録 | POST | [/api/tasks](http://localhost:8080/registerTask) | 新規 Task・TaskDetail・ Arequest・ Brequestを登録 |
+| Task更新 | PUT | [/api/tasks](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 |
+| Task更新 (削除) | PUT | [/api/tasks](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 (削除) |
+
 # 6. 動作確認
 - Taskの全件検索<br>
 https://github.com/user-attachments/assets/111bbc22-6f4d-4d24-b016-16bbf2faa947<br>
