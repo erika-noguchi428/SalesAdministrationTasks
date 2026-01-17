@@ -24,11 +24,11 @@
 
 | 機能 | HTTP Method | Endpoint | 説明 |
 |------|-------------|----------|------|
-| Task一覧取得 | GET | [/api/tasks](http://localhost:8080/tasksList) | Taskと紐づくTaskDetail・ Arequest・ Brequestを全件取得 |
-| Task Id検索 | GET | [/api/tasks](http://localhost:8080/task/21) | Task Id（このEndpointの場合は21）に紐づくTaskDetail・ Arequest・ Brequestを登録 |
-| Task登録 | POST | [/api/tasks](http://localhost:8080/registerTask) | 新規 Task・TaskDetail・ Arequest・ Brequestを登録 |
-| Task更新 | PUT | [/api/tasks](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 |
-| Task更新 (削除) | PUT | [/api/tasks](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 (削除) |
+| Task一覧取得 | GET | [/api/tasksList](http://localhost:8080/tasksList) | Taskと紐づくTaskDetail・ Arequest・ Brequestを全件取得 |
+| Task Id検索 | GET | [/api/task/taskID](http://localhost:8080/task/21) | Task Id（このEndpointの場合は21）に紐づくTaskDetail・ Arequest・ Brequestを登録 |
+| Task登録 | POST | [/api/registerTask](http://localhost:8080/registerTask) | 新規 Task・TaskDetail・ Arequest・ Brequestを登録 |
+| Task更新 | PUT | [/api/updateTask](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 |
+| Task更新 (削除) | PUT | [/api/updateTask](http://localhost:8080/updateTask) | Task・TaskDetail・ Arequest・ Brequestを更新 (削除) |
 
 ### ER図
 
